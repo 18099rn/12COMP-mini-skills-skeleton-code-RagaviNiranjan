@@ -1,7 +1,16 @@
+/********************************************************/
+//
+/********************************************************/
 var xPos = 100;
 var yPos = 100;
 var xVel = 10;
 var yVel = 12;
+var diameter1 = 10;
+
+var xPos1 = 200;
+var yPos1 = 200;
+var xVel1 = 20;
+var yVel1 = 14;
 var diameter = 10;
 
 
@@ -15,6 +24,9 @@ function draw() {
 
   xPos = xPos + xVel;
   yPos = yPos + yVel;
+
+  xPos1 = xPos1 + xVel1;
+  yPos1 = yPos1 + yVel1;
 
   if (xPos >= width - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
@@ -35,4 +47,25 @@ function draw() {
   }
 
   ellipse(xPos, yPos, diameter);
+
+   if (xPos1 >= width - diameter1 / 2) {
+    fill(random(0, 255), random(0, 255), random(0, 255));
+    xVel1 = xVel1 * -1;
+  }
+  if (xPos1 <= diameter1 / 2) {
+    fill(random(0, 255), random(0, 255), random(0, 255));
+    xVel1 = xVel1 * -1;
+  }
+
+  if (yPos1 >= height - diameter1 / 2) {
+    fill(random(0, 255), random(0, 255), random(0, 255));
+    yVel1 = yVel1 * -1;
+  }
+  if (yPos1 <= diameter1 / 2) {
+    fill(random(0, 255), random(0, 255), random(0, 255));
+    yVel1 = yVel1 * -1;
+  }
+
+  ellipse(xPos1, yPos1, diameter);
 }
+
