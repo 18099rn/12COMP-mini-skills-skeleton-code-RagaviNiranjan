@@ -7,6 +7,7 @@ var diameter = 10;
 
 function setup() {
   createCanvas(400, 400);
+  
 }
 
 
@@ -19,19 +20,24 @@ function draw() {
   if (xPos >= width - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     xVel = xVel * -1;
+    xPos = width - diameter / 2;
   }
   if (xPos <= diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     xVel = xVel * -1;
+    xPos = diameter / 2;
   }
 
   if (yPos >= height - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     yVel = yVel * -1;
+    yPos = height - diameter / 2;
   }
   if (yPos <= diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     yVel = yVel * -1;
+    yPos = diameter / 2;
+
   }
 
   ellipse(xPos, yPos, diameter);
