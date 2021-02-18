@@ -1,8 +1,10 @@
 /********************************************************/
 //
 /********************************************************/
-var xPos = 100;
-var yPos = 100;
+var pos = {
+x:100,
+y:50
+}
 var xVel = 10;
 var yVel = 12;
 var diameter1 = 10;
@@ -16,37 +18,42 @@ var diameter = 10;
 
 function setup() {
   createCanvas(400, 400);
+   
 }
 
 
 function draw() {
-  background('cyan');
+   background('cyan');
 
-  xPos = xPos + xVel;
-  yPos = yPos + yVel;
+
+  pos.x = random(0, width); 
+  pos.y = random(0, height);
+
+  pos.x = pos.x + xVel;
+  pos.y = pos.y + yVel;
 
   xPos1 = xPos1 + xVel1;
   yPos1 = yPos1 + yVel1;
 
-  if (xPos >= width - diameter / 2) {
+  if (pos.x >= width - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     xVel = xVel * -1;
   }
-  if (xPos <= diameter / 2) {
+  if (pos.x <= diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     xVel = xVel * -1;
   }
 
-  if (yPos >= height - diameter / 2) {
+  if (pos.y >= height - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     yVel = yVel * -1;
   }
-  if (yPos <= diameter / 2) {
+  if (pos.y <= diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
     yVel = yVel * -1;
   }
 
-  ellipse(xPos, yPos, diameter);
+  ellipse(pos.x, pos.y, diameter);
 
    if (xPos1 >= width - diameter1 / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
