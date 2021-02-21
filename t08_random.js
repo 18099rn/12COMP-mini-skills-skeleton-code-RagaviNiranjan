@@ -4,17 +4,20 @@
 var pos = {
 x:0,
 y:0,
+x1:0,
+y1:0,
 
 }
-var xVel = 10;
-var yVel = 12;
-var diameter1 = 10;
+var vel = {
+x:10,
+y:12,
+x1:20,
+y1:14,  
+  
+}
 
-var xPos1 = 100;
-var yPos1 = 100;
-var xVel1 = 7;
-var yVel1 = 14;
-var diameter = 10;
+var diameter1 = 12;
+var diameter = 12;
 
 
 function setup() {
@@ -24,71 +27,70 @@ function setup() {
 
 
 function draw() {
-   background('cyan');
-
+   background('black');
 
 //pos.x = random(0, width); 
 //pos.y = random(0, height);
 
-  pos.x = pos.x + xVel;
-  pos.y = pos.y + yVel;
+  pos.x = pos.x + vel.x;
+  pos.y = pos.y + vel.y;
 
-  xPos1 = xPos1 + xVel1;
-  yPos1 = yPos1 + yVel1;
+  pos.x1 = pos.x1 + vel.x1;
+  pos.y1 = pos.y1 + vel.y1;
 
   if (pos.x >= width - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
-    xVel = xVel * -1;
+    vel.x = vel.x * -1;
     pos.x = width - diameter / 2;
   }
   if (pos.x <= diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
-    xVel = xVel * -1;
+    vel.x = vel.x * -1;
     pos.x = diameter / 2;
 
   }
 
   if (pos.y >= height - diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
-    yVel = yVel * -1;
+    vel.y = vel.y * -1;
     pos.y = height - diameter / 2;
 
   }
   if (pos.y <= diameter / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
-    yVel = yVel * -1;
+    vel.y = vel.y * -1;
     pos.y = diameter / 2;
 
   }
 
   ellipse(pos.x, pos.y, diameter);
 
-   if (xPos1 >= width - diameter1 / 2) {
+   if (pos.x1 >= width - diameter1 / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
-    xVel1 = xVel1 * -1;
-    xPos1 = width - diameter / 2;
+    vel.x1 = vel.x1 * -1;
+    pos.x1 = width - diameter / 2;
 
   }
-  if (xPos1 <= diameter1 / 2) {
+  if (pos.x1 <= diameter1 / 2) {
     fill(random(0, 255), random(0, 255), random(0, 255));
-    xVel1 = xVel1 * -1;
-    xPos1 = diameter / 2;
-
-  }
-
-  if (yPos1 >= height - diameter1 / 2) {
-    fill(random(0, 255), random(0, 255), random(0, 255));
-    yVel1 = yVel1 * -1;
-    yPos1 = height - diameter / 2;
-
-  }
-  if (yPos1 <= diameter1 / 2) {
-    fill(random(0, 255), random(0, 255), random(0, 255));
-    yVel1 = yVel1 * -1;
-    yPos1 = diameter / 2;
+    vel.x1 = vel.x1 * -1;
+    pos.x1 = diameter / 2;
 
   }
 
-  ellipse(xPos1, yPos1, diameter);
+  if (pos.y1 >= height - diameter1 / 2) {
+    fill(random(0, 255), random(0, 255), random(0, 255));
+    vel.y1 = vel.y1 * -1;
+    pos.y1 = height - diameter / 2;
+
+  }
+  if (pos.y1 <= diameter1 / 2) {
+    fill(random(0, 255), random(0, 255), random(0, 255));
+    vel.y1 = vel.y1 * -1;
+    pos.y1 = diameter / 2;
+
+  }
+
+  ellipse(pos.x1, pos.y1, diameter);
 }
 

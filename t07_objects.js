@@ -11,7 +11,7 @@ var xPos1 = 200;
 var yPos1 = 200;
 var xVel1 = 20;
 var yVel1 = 14;
-var diameter = 10;
+var diameter = 12;
 
 
 function setup() {
@@ -20,7 +20,7 @@ function setup() {
 
 
 function draw() {
-  background('cyan');
+  background('black');
 
   xPos = xPos + xVel;
   yPos = yPos + yVel;
