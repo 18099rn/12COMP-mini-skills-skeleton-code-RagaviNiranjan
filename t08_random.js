@@ -1,36 +1,57 @@
 /********************************************************/
 //
 /********************************************************/
+var ball1 = {
+  dia = 100,
+  posX = 0,
+  posY = 0,
+  velX = 0,
+  velY = 0,
+  R = 0,
+  G = 0,
+  B = 0
+}
+
+var ball2 = {
+  dia = 100,
+  posX = 0,
+  posY = 0,
+  velX = 0,
+  velY = 0,
+  R = 0,
+  G = 0,
+  B = 0
+}
+
 var pos = {
 x:0,
 y:0,
 x1:0,
 y1:0,
-
 }
 var vel = {
-x:10,
-y:12,
+x:0,
+y:0,
 x1:20,
 y1:14,  
-  
 }
 
 var diameter1 = 12;
 var diameter = 12;
 
-
 function setup() {
   createCanvas(400, 400);
-   
+  ball1.posX = random(diameter/2, width - diameter/2);
+  ball1.posY = random(diameter/2, width - diameter/2);
+  ball1.velX = random(5, 10);
+  ball1.velY = random(4, 12);
 }
-
 
 function draw() {
    background('black');
-
 //pos.x = random(0, width); 
 //pos.y = random(0, height);
+//noLoop();
 
   pos.x = pos.x + vel.x;
   pos.y = pos.y + vel.y;
@@ -60,6 +81,7 @@ function draw() {
     fill(random(0, 255), random(0, 255), random(0, 255));
     vel.y = vel.y * -1;
     pos.y = diameter / 2;
+    
 
   }
 

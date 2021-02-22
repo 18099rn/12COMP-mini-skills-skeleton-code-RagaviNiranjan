@@ -13,11 +13,9 @@ var xVel1 = 20;
 var yVel1 = 14;
 var diameter = 12;
 
-
 function setup() {
   createCanvas(400, 400);
 }
-
 
 function draw() {
   background('black');
