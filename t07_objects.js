@@ -11,7 +11,7 @@ var xPos1 = 200;
 var yPos1 = 200;
 var xVel1 = 20;
 var yVel1 = 14;
-var diameter = 12;
+var diameter1 = 10;
 
 function setup() {
   createCanvas(400, 400);
